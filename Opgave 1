@@ -1,1 +1,1 @@
-
+% Grunden til at man vælger et signal med et lille alfabet, er at hvis der er transmissionsfejl, så er der er lavere antal muligheder, hvilket gør sandsynligheden for at finde det rigtige større. Dette kan for eksempel være med et alfabet på 4. Dette betyder at der er 16 forskellige kombinationer, hvilket betyder at der er mærkant færre muligheder end hvis man havde et uendelig langt alfabet.
