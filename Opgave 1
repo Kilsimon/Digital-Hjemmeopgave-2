@@ -8,3 +8,5 @@
 % Man kan bruge ligningerne:
 % log_2(M)/T = Total bitrate (bit/sek)
 % Her er M alfabet antal, hvilket er 4 fordi vi har +-3
+
+% Resultat er 1/32000
