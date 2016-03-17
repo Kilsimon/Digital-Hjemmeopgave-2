@@ -1,5 +1,3 @@
-%% Opg 5
-
 clc
 clear all
 close all
@@ -61,4 +59,11 @@ figure
 % Viser nu sigma som x.
 plot(sigma,fejl_pr_enhed)
 
-%% Opg 5 del 2
+% Del 2
+
+s = sigma;
+E5=9.9747*5;
+SNRdB = 10*log10(E5./(2*s.^2));
+
+figure
+semilogy(SNRdB, fejl_pr_enhed)
