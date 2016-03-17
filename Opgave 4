@@ -16,8 +16,16 @@ m=10;
 a0=[a; zeros(m-1,N)];
 a0=reshape(a0,1,N*m);
 
-g=(0:m-1)/m;
-v=conv(g,a0);
+% initiation (opg 2)
+T=1/32000;
+Ts=T/10;
+ti=-40*T:Ts:40*T;
+
+g=sinc(ti/T);
+g_M = fliplr(g);
+start=801;
+E=9.9747;
+v=conv(a0,g);
 
 %% Opg 4
 
@@ -26,54 +34,46 @@ close all
 % fejlfrit signal, som beskrevet i opgaven.
 sigma=0;
 r0 = v + sigma*randn(1,length(v)); 
-r0Test=r0(1:500);
+
 
 % signal med fejl, som beskrevet i opgaven.
 sigma1=1;
 r1 = v + sigma1*randn(1,length(v)); 
-r1Test=r1(1:500);
 
-figure
-plot(r0Test,'b')
-figure
-plot(r1Test,'r')
 
 % Antal fejl i modtagne signal udregnes.
 % først samples signalet
-s=r0(1:m:length(v));
+s = conv(r0,g_M);
 
-% tom vektor oprettes
-a_hat=zeros(1,length(s));
-E=0.1333;
 
 % test
-
-for k=1:length(s)
-if abs(s)>2*E
+for k=1:N
+    sample=s(start+m*(k-1));
+    
+    if abs(sample)>2*E
  sym=3;
  else
  sym=1;
  end
- a_hat(k)=sym*s(k);
+ a_hat(k)=sym*sign(sample);
 end
-sum(a_hat)
+
+sum(a~=a_hat)
 
 %% Opg 4 del 2
 
 % signal med fejl samples
-s=r1(1:m:length(v));
+s = conv(r1,g_M);
 
-a_hat=zeros(1,length(s));
-E=0.1333;
-
-% test
-
-for k=1:length(s)
-if abs(s)>2*E
+for k=1:N
+    sample=s(start+m*(k-1));
+    
+    if abs(sample)>2*E
  sym=3;
  else
  sym=1;
  end
- a_hat(k)=sym*s(k);
+ a_hat(k)=sym*sign(sample);
 end
-sum(a_hat)
+
+sum(a~=a_hat)
