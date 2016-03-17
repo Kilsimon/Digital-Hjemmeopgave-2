@@ -13,7 +13,7 @@ g=sinc(ti/T);
 % symmetrisk så gør det ingen forskel i vore sitlfælde.
 
 % Vi laver nu filteret. Filteret hedder g_M.
-g_M = conv(g,ti);
+g_M = fliplr(g);
 figure
 plot(g_M)
 
