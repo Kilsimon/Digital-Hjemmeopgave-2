@@ -25,6 +25,6 @@ figure
 plot(gg)
 [E,start] = max(gg)
 
-% Vi kan her se at max er 0.1333 og at samplingsnumeret er 1592. 
+% Vi kan her se at max er 9.9747 og at samplingsnumeret er 801. 
 % Dette er vores Energi som vi kalder E og vores nye start som vi kalder 
 % start.
