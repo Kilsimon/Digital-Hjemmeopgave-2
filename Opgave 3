@@ -27,4 +27,4 @@ vTest=v(1:500);
 
 % plotter savtakpuls med værdierne fra alfabetet.
 figure
-plot(vTest)
+plot(vTest) 
