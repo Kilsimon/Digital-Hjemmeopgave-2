@@ -56,8 +56,9 @@ fejl_pr_enhed(x) = sum(a~=a_hat)/N;
 x=x+1;
 end
 
+sigma=0.4:0.01:1.5;
 figure
 % burde vises med sigma på x-aksen...
-plot(fejl_pr_enhed)
+plot(sigma,fejl_pr_enhed)
 
 %% Opg 5 del 2
