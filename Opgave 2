@@ -2,12 +2,17 @@
 % Fundet fra forrige opgave
 T=1/32000;
 
-%Opgivet i teksten
+% Opgivet i teksten
 Ts=T/10;
 ti=-40*T:Ts:40*T;
 g=sinc(ti/T);
 
-%
+% Vi kunne lave en fliplr for at vende den om. Men siden vores er
+% symmetrisk så gør det ingen forskel i vore sitlfælde.
 
+% 
+g_M = conv(g,ti);
+figure
+plot(g_M)
 
 %% 2
