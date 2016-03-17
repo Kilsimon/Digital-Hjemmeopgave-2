@@ -1,4 +1,13 @@
 %% 1
+% Fundet fra forrige opgave
+T=1/32000;
+
+%Opgivet i teksten
+Ts=T/10;
+ti=-40*T:Ts:40*T;
+g=sinc(ti/T);
+
+%
 
 
 %% 2
