@@ -58,7 +58,7 @@ end
 
 sigma=0.4:0.01:1.5;
 figure
-% burde vises med sigma på x-aksen...
+% Viser nu sigma som x.
 plot(sigma,fejl_pr_enhed)
 
 %% Opg 5 del 2
