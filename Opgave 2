@@ -12,15 +12,19 @@ g=sinc(ti/T);
 % Vi kunne lave en fliplr for at vende den om. Men siden vores er
 % symmetrisk så gør det ingen forskel i vore sitlfælde.
 
-% 
+% Vi laver nu filteret. Filteret hedder g_M.
 g_M = conv(g,ti);
 figure
 plot(g_M)
 
 % Del 2
+% Herefter finder vi et enkelt puls der er gået igennem filteret. Her kan
+% vi se at det er mere tydeligt om det er et +1 eller -1. 
 gg = conv(g,g_M);
 figure
 plot(gg)
-max(gg)
+[E,start] = max(gg)
 
-E = 0.1333;
+% Vi kan her se at max er 0.1333 og at samplingsnumeret er 1592. 
+% Dette er vores Energi som vi kalder E og vores nye start som vi kalder 
+% start.
