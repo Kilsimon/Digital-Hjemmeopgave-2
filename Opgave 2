@@ -1,4 +1,6 @@
-%% 1
+%% opg 2
+%Del 1
+
 % Fundet fra forrige opgave
 T=1/32000;
 
@@ -15,4 +17,10 @@ g_M = conv(g,ti);
 figure
 plot(g_M)
 
-%% 2
+% Del 2
+gg = conv(g,g_M);
+figure
+plot(gg)
+max(gg)
+
+E = 0.1333;
